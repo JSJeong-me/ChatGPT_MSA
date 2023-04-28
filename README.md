@@ -23,3 +23,7 @@
   https://github.com/JSJeong-me/docker
 
   Kubernetes
+
+
+### 실습 준비   https://drive.google.com/file/d/1CFYwxQJSfeFknm7K_YTVwpG7clv72fp7/view?usp=share_link
+

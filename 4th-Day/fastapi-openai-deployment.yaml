@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-openai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi-openai
+  template:
+    metadata:
+      labels:
+        app: fastapi-openai
+    spec:
+      containers:
+      - name: fastapi-openai
+        image: your-dockerhub-username/fastapi-openai-demo:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openai-secrets
+              key: OPENAI_API_KEY
+        - name: WEATHER_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openai-secrets
+              key: WEATHER_API_KEY

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenAI Function Calling Demo</title>
+</head>
+<body>
+    <h2>날씨 챗봇</h2>
+    <input id="msg" type="text" placeholder="도시 이름을 입력하세요">
+    <button onclick="sendMsg()">전송</button>
+    <div id="chat"></div>
+    <script>
+        const ws = new WebSocket("ws://YOUR_EC2_PUBLIC_IP:8000/ws");
+        ws.onmessage = function(event) {
+            document.getElementById("chat").innerHTML += "<p><b>AI:</b> " + event.data + "</p>";
+        };
+        function sendMsg() {
+            const msg = document.getElementById("msg").value;
+            ws.send(msg);
+            document.getElementById("chat").innerHTML += "<p><b>나:</b> " + msg + "</p>";
+            document.getElementById("msg").value = "";
+        }
+    </script>
+</body>
+</html>

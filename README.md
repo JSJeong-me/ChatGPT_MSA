@@ -22,7 +22,7 @@
   Docker
   https://github.com/JSJeong-me/docker
 
-  Kubernetes
+  (Kubernetes)[https://github.com/JSJeong-me/EFK/blob/main/03_Day/README.md]
 
 
 ### 실습 준비   https://drive.google.com/file/d/1CFYwxQJSfeFknm7K_YTVwpG7clv72fp7/view?usp=share_link
